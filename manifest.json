@@ -1,0 +1,16 @@
+{
+  "name": "Reportes Villa del Rosario",
+  "short_name": "VDR Reportes",
+  "description": "Sistema de Reportes Ciudadanos — Municipalidad de Villa del Rosario",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5820A",
+  "theme_color": "#F5820A",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "categories": ["government", "utilities"],
+  "lang": "es-AR"
+}
