@@ -1253,14 +1253,45 @@ function entrarAnonimo() {
 }
 
 function loginGoogle() {
-  // Google OAuth — se activa con la URL real de producción
-  const clientId = 'TU_GOOGLE_CLIENT_ID'; // reemplazar al configurar OAuth
+  const clientId = '689513454224-c0sh2cs8fa547des1g31g8pd1rbmq607.apps.googleusercontent.com';
   const redirect = encodeURIComponent(window.location.origin);
-  if (clientId === 'TU_GOOGLE_CLIENT_ID') {
-    Toast.alerta('Configurar Google OAuth en config.js para activar este botón');
-    return;
-  }
-  window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirect}&response_type=token&scope=email%20profile`;
+  const scope    = encodeURIComponent('email profile');
+  window.location.href =
+    `https://accounts.google.com/o/oauth2/v2/auth` +
+    `?client_id=${clientId}` +
+    `&redirect_uri=${redirect}` +
+    `&response_type=token` +
+    `&scope=${scope}` +
+    `&prompt=select_account`;
+}
+
+// Procesar el token que devuelve Google al redirigir
+function procesarTokenGoogle() {
+  const hash   = window.location.hash;
+  if (!hash.includes('access_token')) return;
+  const params = new URLSearchParams(hash.replace('#', ''));
+  const token  = params.get('access_token');
+  if (!token) return;
+
+  // Obtener datos del usuario con el token
+  fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+    headers: { Authorization: 'Bearer ' + token }
+  })
+  .then(r => r.json())
+  .then(user => {
+    Sesion.guardar({
+      nombre: user.name || user.email,
+      email:  user.email,
+      foto:   user.picture,
+      rol:    'vecino',
+      token:  token
+    });
+    // Limpiar el hash de la URL
+    history.replaceState(null, '', window.location.pathname);
+    ir('p-home');
+    Toast.exito('Bienvenido, ' + (user.given_name || user.email) + '!');
+  })
+  .catch(() => Toast.error('Error al iniciar sesión con Google'));
 }
 
 function cerrarSesion() {
@@ -1330,6 +1361,8 @@ if ('serviceWorker' in navigator) {
 
 // ── INIT ──────────────────────────────────────────────────
 window.addEventListener('load', () => {
+  // Procesar token de Google si viene de un redirect OAuth
+  procesarTokenGoogle();
   // Si ya hay sesión activa, ir directo al home
   if (Sesion.estaLogueado()) ir('p-home');
   // Cargar reportes en background
