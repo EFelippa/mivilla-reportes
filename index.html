@@ -259,25 +259,29 @@ input,textarea,select { font-family:inherit; }
 
 /* ── FOOTER CRÉDITO ── */
 .footer-credit {
-  padding:14px 16px 18px; text-align:center;
+  padding:16px 16px 20px; text-align:center;
   border-top:1px solid var(--gris-bd); background:#fff; flex-shrink:0;
 }
-.fc-muni { font-size:10px; color:#c0c0c0; line-height:1.6; }
-.fc-sep { width:28px; height:1px; background:var(--gris-bd); margin:8px auto; }
-.fc-dev { font-size:10px; color:#c8c8c8; }
-.fc-dev strong { color:#aaa; font-weight:600; }
+.fc-logo { margin-bottom:10px; }
+.fc-muni { font-size:13px; font-weight:600; color:#888; line-height:1.6; }
+.fc-muni-sub { font-size:11px; color:#bbb; margin-top:1px; }
+.fc-sep { width:28px; height:1px; background:var(--gris-bd); margin:10px auto; }
+.fc-dev { font-size:10px; color:#ccc; }
+.fc-dev strong { color:#bbb; font-weight:500; }
 
-.footer-credit-dark { padding:14px 16px 18px; text-align:center; border-top:1px solid #2a2a2a; flex-shrink:0; }
-.footer-credit-dark .fc-muni { color:rgba(255,255,255,0.18); }
+.footer-credit-dark { padding:16px 16px 20px; text-align:center; border-top:1px solid #2a2a2a; flex-shrink:0; }
+.footer-credit-dark .fc-muni { color:rgba(255,255,255,0.35); }
+.footer-credit-dark .fc-muni-sub { color:rgba(255,255,255,0.2); }
 .footer-credit-dark .fc-sep { background:rgba(255,255,255,0.08); }
 .footer-credit-dark .fc-dev { color:rgba(255,255,255,0.18); }
-.footer-credit-dark .fc-dev strong { color:rgba(255,255,255,0.32); }
+.footer-credit-dark .fc-dev strong { color:rgba(255,255,255,0.28); }
 
-.footer-credit-orange { padding:14px 16px 18px; text-align:center; border-top:1px solid rgba(255,255,255,0.15); background:var(--naranja-dk); flex-shrink:0; }
-.footer-credit-orange .fc-muni { color:rgba(255,255,255,0.5); }
+.footer-credit-orange { padding:16px 16px 20px; text-align:center; border-top:1px solid rgba(255,255,255,0.15); background:var(--naranja-dk); flex-shrink:0; }
+.footer-credit-orange .fc-muni { color:rgba(255,255,255,0.8); }
+.footer-credit-orange .fc-muni-sub { color:rgba(255,255,255,0.5); }
 .footer-credit-orange .fc-sep { background:rgba(255,255,255,0.2); }
 .footer-credit-orange .fc-dev { color:rgba(255,255,255,0.4); }
-.footer-credit-orange .fc-dev strong { color:rgba(255,255,255,0.7); }
+.footer-credit-orange .fc-dev strong { color:rgba(255,255,255,0.6); }
 
 /* ── SKELETON ── */
 @keyframes shimmer { 0%{opacity:0.6} 50%{opacity:1} 100%{opacity:0.6} }
@@ -454,7 +458,9 @@ input,textarea,select { font-family:inherit; }
 
     <div style="flex:1"></div>
     <div class="footer-credit-orange">
-      <div class="fc-muni">Municipalidad de Villa del Rosario<br>Hipólito Yrigoyen 870 · Córdoba 5963</div>
+      <div class="fc-logo"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="rgba(255,255,255,0.15)"/><path d="M18 4L7 8.5V17C7 23.5 11.8 29 18 31C24.2 29 29 23.5 29 17V8.5L18 4Z" fill="rgba(255,255,255,0.7)"/><path d="M13 17.5L16.5 21L23 14.5" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fc-muni">Municipalidad de Villa del Rosario</div>
+      <div class="fc-muni-sub">Hipólito Yrigoyen 870 · Córdoba 5963</div>
       <div class="fc-sep"></div>
       <div class="fc-dev">Developed by <strong>Ing. Ezequiel Felippa</strong></div>
     </div>
@@ -525,6 +531,7 @@ input,textarea,select { font-family:inherit; }
     </div>
 
     <div class="footer-credit">
+      <div class="fc-logo"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#F5820A" opacity="0.12"/><path d="M18 4L7 8.5V17C7 23.5 11.8 29 18 31C24.2 29 29 23.5 29 17V8.5L18 4Z" fill="#F5820A" opacity="0.7"/><path d="M13 17.5L16.5 21L23 14.5" stroke="#F5820A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="fc-muni">Municipalidad de Villa del Rosario</div>
       <div class="fc-sep"></div>
       <div class="fc-dev">Developed by <strong>Ing. Ezequiel Felippa</strong></div>
@@ -614,7 +621,9 @@ input,textarea,select { font-family:inherit; }
       </div>
 
       <div class="footer-credit">
-        <div class="fc-muni">Municipalidad de Villa del Rosario · Hipólito Yrigoyen 870</div>
+        <div class="fc-logo"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#F5820A" opacity="0.12"/><path d="M18 4L7 8.5V17C7 23.5 11.8 29 18 31C24.2 29 29 23.5 29 17V8.5L18 4Z" fill="#F5820A" opacity="0.7"/><path d="M13 17.5L16.5 21L23 14.5" stroke="#F5820A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fc-muni">Municipalidad de Villa del Rosario</div>
+        <div class="fc-muni-sub">Hipólito Yrigoyen 870 · Córdoba 5963</div>
         <div class="fc-sep"></div>
         <div class="fc-dev">Developed by <strong>Ing. Ezequiel Felippa</strong></div>
       </div>
@@ -763,6 +772,7 @@ input,textarea,select { font-family:inherit; }
       <div id="msg-envio" style="font-size:12px;text-align:center;color:var(--gris-txt);margin-top:8px;min-height:18px"></div>
 
       <div class="footer-credit" style="margin-top:20px">
+        <div class="fc-logo"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#F5820A" opacity="0.12"/><path d="M18 4L7 8.5V17C7 23.5 11.8 29 18 31C24.2 29 29 23.5 29 17V8.5L18 4Z" fill="#F5820A" opacity="0.7"/><path d="M13 17.5L16.5 21L23 14.5" stroke="#F5820A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="fc-muni">Municipalidad de Villa del Rosario</div>
         <div class="fc-sep"></div>
         <div class="fc-dev">Developed by <strong>Ing. Ezequiel Felippa</strong></div>
@@ -930,7 +940,9 @@ input,textarea,select { font-family:inherit; }
       </div>
 
       <div class="footer-credit" style="margin-top:10px">
-        <div class="fc-muni">Municipalidad de Villa del Rosario · v1.0.0</div>
+        <div class="fc-logo"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="#F5820A" opacity="0.12"/><path d="M18 4L7 8.5V17C7 23.5 11.8 29 18 31C24.2 29 29 23.5 29 17V8.5L18 4Z" fill="#F5820A" opacity="0.7"/><path d="M13 17.5L16.5 21L23 14.5" stroke="#F5820A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="fc-muni">Municipalidad de Villa del Rosario</div>
+        <div class="fc-muni-sub">v1.0.0</div>
         <div class="fc-sep"></div>
         <div class="fc-dev">Developed by <strong>Ing. Ezequiel Felippa</strong></div>
       </div>
@@ -1029,7 +1041,9 @@ input,textarea,select { font-family:inherit; }
     </div>
 
     <div class="footer-credit-dark" style="background:var(--negro)">
-      <div class="fc-muni">Municipalidad de Villa del Rosario · Sistema interno</div>
+      <div class="fc-logo"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="8" fill="rgba(255,255,255,0.15)"/><path d="M18 4L7 8.5V17C7 23.5 11.8 29 18 31C24.2 29 29 23.5 29 17V8.5L18 4Z" fill="rgba(255,255,255,0.7)"/><path d="M13 17.5L16.5 21L23 14.5" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fc-muni">Municipalidad de Villa del Rosario</div>
+      <div class="fc-muni-sub">Sistema interno de gestión</div>
       <div class="fc-sep"></div>
       <div class="fc-dev">Developed by <strong>Ing. Ezequiel Felippa</strong></div>
     </div>
@@ -1239,7 +1253,14 @@ function entrarAnonimo() {
 }
 
 function loginGoogle() {
-  Toast.alerta('Login con Google disponible al publicar en Vercel');
+  // Google OAuth — se activa con la URL real de producción
+  const clientId = 'TU_GOOGLE_CLIENT_ID'; // reemplazar al configurar OAuth
+  const redirect = encodeURIComponent(window.location.origin);
+  if (clientId === 'TU_GOOGLE_CLIENT_ID') {
+    Toast.alerta('Configurar Google OAuth en config.js para activar este botón');
+    return;
+  }
+  window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${redirect}&response_type=token&scope=email%20profile`;
 }
 
 function cerrarSesion() {
